@@ -141,19 +141,36 @@
     let abc = document.querySelector('.cart__total-products');
     abc.innerHTML = `<i
                   class="fa-solid fa-cart-shopping"></i>${storedArray.length}`
+    let quantityMap = new Map();
+
+    // Retrieve quantity values from local storage
+    let storedQuantityMap = localStorage.getItem('quantityMap');
+    if (storedQuantityMap) {
+      quantityMap = new Map(JSON.parse(storedQuantityMap));
+    }
+
     products.forEach(function (product) {
       storedArray.forEach(function (val) {
         if (product.id == val) {
+          let quantity = quantityMap.get(product.id) || 1; // Retrieve quantity from localStorage
+
           let newdiv2 = document.createElement("ul");
           newdiv2.classList.add('cart__list');
-          newdiv2.innerHTML = `<li class="cart__item"><a class="cart__link" href="#">${product.name}</a><span class="cart__item-price">&#8377 ${product.wrongprice}</span></li>`
+          let temp=product.wrongprice*quantity
+          newdiv2.innerHTML = `
+                <li class="cart__item">
+                    <a class="cart__link" href="#">${product.name}</a>
+                    <span class="cart__item-quantity">${quantity}</span> <!-- Display quantity -->
+                    <span class="cart__item-price">&#8377 ${temp}</span>
+                </li>
+            `;
           a.appendChild(newdiv2);
         }
       });
     });
     let p1 = document.createElement('p')
     p1.classList.add('cart__total-price');
-    p1.innerHTML = `Total<span class="cart__total-price-value">${localStorage.getItem("totalprice")}</span>`
+    p1.innerHTML = `Total<span class="cart__total-price-value">${localStorage.getItem("totalpricewithtax")}</span>`
     a.appendChild(p1)
 
 
@@ -166,7 +183,7 @@
 
 
     // 
-    var b = localStorage.getItem('totalprice')
+    var b = localStorage.getItem('totalpricewithtax')
     var razorpayOptions = {
       key: 'rzp_test_8ydfJQKGSKoloz',
       description: 'Test Transaction',
