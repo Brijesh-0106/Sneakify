@@ -69,7 +69,7 @@
                 <div class="cart-icon-container">
                     <a href="cart-2.html" class="navbar-link cart">
                         <i class="fa-solid fa-bag-shopping cart-icon"></i>
-                        <p id="count" class="cart-count">0</p>
+                        <p id="count" class="cart-count"></p>
                     </a>
                 </div>
             </div>
@@ -240,6 +240,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        let bagcount=document.querySelector('#count')
+        console.log(bagcount);
+        bagcount.innerHTML= JSON.parse(localStorage.getItem('keyid2')).length;
+
+
         var swiper = new Swiper(".card_swiper", {
             spaceBetween: 20,
             loop: true,

@@ -267,6 +267,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        let bagcount=document.querySelector('#count')
+        console.log(bagcount);
+        bagcount.innerHTML= JSON.parse(localStorage.getItem('keyid2')).length;
+
+
+        
         let products = [
             {
                 id: 1,

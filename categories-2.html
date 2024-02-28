@@ -403,6 +403,11 @@
     </section>
 
     <!--End of Footer -->
+    <script>
+         let bagcount = document.querySelector('#count')
+            console.log(bagcount);
+            bagcount.innerHTML = JSON.parse(localStorage.getItem('keyid2')).length;
+    </script>
     <script src="script.js"></script>
     <script src="categories-2.js"></script>
 </body>
