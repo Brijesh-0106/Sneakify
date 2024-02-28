@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!--End of Fontawasome CDN link -->
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -40,8 +42,8 @@
                     <!-- <a href="aboutus.html" class="navbar-link">AboutUs</a> -->
                     <a href="contactus-2.html" class="navbar-link">ContactUs</a>
                 </div>
-        </div>
-        <div class="search-and-cart-container">
+            </div>
+            <div class="search-and-cart-container">
                 <div class="search-container">
                     <input type="search" class="searchbar" placeholder="Search here...">
                     <button type="submit" class="search-btn">
@@ -51,51 +53,55 @@
                 <div class="cart-icon-container">
                     <a href="cart-2.html" class="navbar-link cart">
                         <i class="fa-solid fa-bag-shopping cart-icon"></i>
-                        <p id="count" class="cart-count">   0</p>
+                        <p id="count" class="cart-count"> 0</p>
                     </a>
                 </div>
-            </div>    
+            </div>
         </div>
     </nav>
 
     <!--End of Navbar -->
 
-    
+
     <!-- Sign up form -->
 
     <div class="login-form-container">
         <form class="login-form">
-          <h1 id="full-name">Welcome </h1>
-          <div class="input-group"><label for="fname">First Name:</label>
-            <input type="text" id="fname" name="fname" value="meet" placeholder="First Name*" readonly="readonly">
-          </div>
-          <div class="input-group">
-            <label for="lname">Last Name:</label>
-            <input type="text" id="lname" name="lname" value="Asodariya" placeholder="Last Name" readonly="readonly">
-          </div>
-           <div class="input-group">
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" value="0123456789"  placeholder="Phone Number*">
-          </div>
-          <div class="input-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="abcd@gmail.com" placeholder="Email*" readonly="readonly">
-          </div>
-          <div class="input-group">
-            <label for="address">Address:</label>
-            <textarea rows="3" id="message" name="message" placeholder="Write your message here...*" readonly="readonly">1206, Bridge, Satyamev Elite, Sardar Patel Ring Rd, South Bopal, Bopal, Ahmedabad, Gujarat 380058</textarea>
-          </div>
-          <div class="input-group">
-          <button type="submit" class="contact-btn">Edit</button>
-          <button type="button" class="contact-btn">Done</button>
-         </div>
-          <div class="login-via-google">
-            <div class="google-icon">
-              <button onclick="logout(event)" class="contact-btn">Logout</button>
+            <h1 id="full-name">Welcome </h1>
+            <div class="input-group"><label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" value="meet" placeholder="First Name*" readonly="readonly">
             </div>
-          </div>
+            <div class="input-group">
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" value="Asodariya" placeholder="Last Name"
+                    readonly="readonly">
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" value="0123456789" placeholder="Phone Number*"
+                    readonly="readonly">
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="abcd@gmail.com" placeholder="Email*"
+                    readonly="readonly">
+            </div>
+            <div class="input-group">
+                <label for="address">Address:</label>
+                <textarea rows="3" id="message" name="message" placeholder="Write your message here...*"
+                    readonly="readonly">1206, Bridge, Satyamev Elite, Sardar Patel Ring Rd, South Bopal, Bopal, Ahmedabad, Gujarat 380058</textarea>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="contact-btn">Edit</button>
+                <button type="button" class="contact-btn">Done</button>
+            </div>
+            <div class="login-via-google">
+                <div class="google-icon">
+                    <button onclick="logout(event)" class="contact-btn">Logout</button>
+                </div>
+            </div>
         </form>
-      </div>
+    </div>
 
     <!--End of Sign up form -->
 
@@ -121,9 +127,10 @@
     </section>
 
     <!--End of Footer -->
-    
+
 
     <script src="profile.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

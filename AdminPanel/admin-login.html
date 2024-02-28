@@ -1,40 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
-    <!-- Tab logo -->
-    <link rel="icon" href="images/Sneakify-logos_black.png">
-    <!-- End of Tab logo -->
-    <!-- External files links -->
-    <link rel="stylesheet" href="CSS/admin-login.css">
-    <!-- End of External files links -->
-    <!-- Fontawasome CDN link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!--End of Fontawasome CDN link -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <!-- Tab logo -->
+  <link rel="icon" href="images/Sneakify-logos_black.png">
+  <!-- End of Tab logo -->
+  <!-- External files links -->
+  <link rel="stylesheet" href="CSS/admin-login.css">
+  <!-- End of External files links -->
+  <!-- Fontawasome CDN link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!--End of Fontawasome CDN link -->
+  <!-- Bootstrap CSS CDN link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!--End of Bootstrap CSS CDN link -->
 </head>
+
 <body>
-    
-     <!-- Login form -->
 
-     <div class="login-form-container">
-        <form class="login-form" id="login-form">
-          <h1>Admin Login</h1>
-          <p>Please login to your account</p>
-          <div class="input-group">
-            <input type="email" id="email" name="email" placeholder="Email*">
-          </div>
-          <div class="input-group">
-            <input type="password" id="password" name="password" placeholder="Password*">
-          </div>
-          <button class="btn-btn" type="submit">Login</button>
-          </div>
-        </form>
+  <!-- Login form -->
+
+  <div class="login-form-container">
+    <form class="login-form" id="login-form" action="/contactus.html" name="myform" method="post"
+      onsubmit="return validateform()">
+      <h1>Admin Login</h1>
+      <p>Please login to your account</p>
+      <div class="alert alert-success alert-dismissible fade show mt-2 fs-4 d-none" id="first"
+        style="width: 100%; border-radius: 8px;padding: 5px 0;" role="alert">
+        <span class="formerror" style="font-size: 18px;"></span>
+        <button type="button" class="btn-close" style="padding: 1rem 1rem;font-size: 13px;" data-bs-dismiss="alert"
+          aria-label="Close"></button>
       </div>
+      <!-- alert ends -->
+      <div class="input-group" id="eb">
+        <input type="email" id="email" name="email" placeholder="Email*" required
+          style="border-top-right-radius: 8px; border-bottom-right-radius: 8px;">
+        <!-- alert by p -->
+        <div class="alert alert-danger alert-dismissible fade show mt-2 fs-4 d-none" id="forth"
+          style="width: 100%; border-radius: 8px;padding: 5px 0;" role="alert">
+          <span class="formerror" style="font-size: 18px;"></span>
+          <button type="button" style="padding: 1rem 1rem;font-size: 13px;" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+        </div>
+        <!-- alert ends -->
+      </div>
+      <div class="input-group" id="pb">
+        <input type="password" id="password" name="password" placeholder="Password*" required
+          style="border-top-right-radius: 8px; border-bottom-right-radius: 8px;">
+        <!-- alert by p -->
+        <div class="alert alert-danger alert-dismissible fade show mt-2 fs-4 d-none" id="fifth"
+          style="width: 100%; border-radius: 8px;padding: 5px 0;" role="alert">
+          <span class="formerror" style="font-size: 18px;"></span>
+          <button type="button" style="padding: 1rem 1rem;font-size: 13px;" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+        </div>
+      </div>
+      <button class="p_login" type="submit" style="border-radius: 8px;">Login</button>
+  </div>
+  </form>
+  </div>
 
-    <!--End of Login form -->
-    <script src="home-script.js"></script>
-
+  <!--End of Login form -->
+  <script src="JS/admin-login.js"></script>
+  <!-- bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

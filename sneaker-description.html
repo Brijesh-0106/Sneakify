@@ -23,8 +23,8 @@
         crossorigin="anonymous"></script>
     <!--End of Bootstrap CSS and JS CDN links -->
     <!-- Swiper Slider link -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<!--End of Swiper Slider link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!--End of Swiper Slider link -->
 </head>
 
 <body>
@@ -59,8 +59,8 @@
                     <a href="contactus.html" class="navbar-link">ContactUs</a>
                     <a href="login.html" class="navbar-link">Login</a>
                 </div>
-        </div>
-        <div class="search-and-cart-container">
+            </div>
+            <div class="search-and-cart-container">
                 <div class="search-container">
                     <input type="search" class="searchbar" placeholder="Search here...">
                     <button type="submit" class="search-btn">
@@ -70,10 +70,10 @@
                 <div class="cart-icon-container">
                     <a href="cart.html" class="navbar-link cart">
                         <i class="fa-solid fa-bag-shopping cart-icon"></i>
-                        <p id="count" class="cart-count">   0</p>
+                        <p id="count" class="cart-count"> 0</p>
                     </a>
                 </div>
-            </div>    
+            </div>
         </div>
     </nav>
 
@@ -93,22 +93,18 @@
 
     <div class="product-container">
         <div class="product-img-container">
-            <div class="product-img-div"><img src="Images/product-img-1.jfif" alt="img" class="product-img"></div>
+            <div class="product-img-div"><img src="" alt="img" class="product-img"></div>
             <div class="product-img-div"><img src="Images/product-img-2.jfif" alt="img" class="product-img"></div>
-            <div class="product-img-div"><img src="Images/product-img-3.jfif" alt="img" class="product-img"></div>
-            <div class="product-img-div"><img src="Images/product-img-4.jfif" alt="img" class="product-img"></div>
-            <div class="product-img-div"><img src="Images/product-img-5.jfif" alt="img" class="product-img"></div>
-            <div class="product-img-div"><img src="Images/product-img-6.jfif" alt="img" class="product-img"></div>
         </div>
         <div class="product-description-container">
             <div class="product-name-container">
-                <h1 class="product-name">Nike Air Force 1 Low</h1>
+                <h1 class="product-name"></h1>
             </div>
             <div class="product-description">
                 <p class="product-des">Custom Running Shoes</p>
             </div>
             <div class="product-price-container">
-                <p class="product-price">MRP: &#8377 2000.00</p>
+                <p class="product-price"></p>
                 <div class="price-taxes">(incl. of all taxes)</div>
             </div>
             <div class="gender-container">
@@ -127,14 +123,6 @@
                         <option value="UK 6">UK 6</option>
                         <option value="UK 6.5">UK 6.5</option>
                         <option value="UK 7">UK 7</option>
-                        <option value="UK 7.5">UK 7.5</option>
-                        <option value="UK 8">UK 8</option>
-                        <option value="UK 8.5">UK 8.5</option>
-                        <option value="UK 9">UK 9</option>
-                        <option value="UK 9.5">UK 9.5</option>
-                        <option value="UK 11">UK 11</option>
-                        <option value="UK 11.5">UK 11.5</option>
-                        <option value="UK 12">UK 12</option>
                     </select>
                 </label>
             </div>
@@ -143,7 +131,9 @@
                             class="fa-regular fa-pen-to-square"></i></button></a>
             </div>
             <div class="signin-to-buy-btn-container">
-                <a href="login.html"><button class="signin-to-buy-btn">Sign In to Buy</button></a>
+                <button class="signin-to-buy-btn" onclick="func()">Add
+                    toCart</button>
+                <!-- <a href="cart-2.html"><button class="signin-to-buy-btn" onclick="addToCart()">Add toCart</button></a> -->
             </div>
         </div>
     </div>
@@ -160,11 +150,12 @@
 
     <!-- Related Products section -->
 
-       <!-- Section 4 -->
+    <!-- Section 4 -->
 
-       <div class="section-4-label">
+    <div class="section-4-label">
         <h1 class="section-4-label-heading">Related Products</h1>
-        <a href="categories.html" class="section-4-label-link">Show All Products<i class="fa-solid fa-arrow-right"></i></a>
+        <a href="categories.html" class="section-4-label-link">Show All Products<i
+                class="fa-solid fa-arrow-right"></i></a>
     </div>
     <section class="slider_container">
         <div class="container">
@@ -173,7 +164,7 @@
                     <div class="swiper-slide">
                         <div class="section-4-card">
                             <a href="sneaker-description.html">
-                            <img src="images/related-product-1.png" alt="img" class="section-4-card-image">
+                                <img src="images/related-product-1.png" alt="img" class="section-4-card-image">
                             </a>
                             <div class="section-card-price-container">
                                 <h1 class="section-card-price">2500&#8377</h1><span>3000&#8377</span>
@@ -184,7 +175,7 @@
                     <div class="swiper-slide">
                         <div class="section-4-card">
                             <a href="sneaker-description.html">
-                            <img src="images/related-product-2.png" alt="img" class="section-4-card-image">
+                                <img src="images/related-product-2.png" alt="img" class="section-4-card-image">
                             </a>
                             <div class="section-card-price-container">
                                 <h1 class="section-card-price">2500&#8377</h1><span>3000&#8377</span>
@@ -195,7 +186,7 @@
                     <div class="swiper-slide">
                         <div class="section-4-card">
                             <a href="sneaker-description.html">
-                            <img src="images/related-product-3.png" alt="img" class="section-4-card-image">
+                                <img src="images/related-product-3.png" alt="img" class="section-4-card-image">
                             </a>
                             <div class="section-card-price-container">
                                 <h1 class="section-card-price">2500&#8377</h1><span>3000&#8377</span>
@@ -206,7 +197,7 @@
                     <div class="swiper-slide">
                         <div class="section-4-card">
                             <a href="sneaker-description.html">
-                            <img src="images/related-product-7.png" alt="img" class="section-4-card-image">
+                                <img src="images/related-product-7.png" alt="img" class="section-4-card-image">
                             </a>
                             <div class="section-card-price-container">
                                 <h1 class="section-card-price">2500&#8377</h1><span>3000&#8377</span>
@@ -217,7 +208,7 @@
                     <div class="swiper-slide">
                         <div class="section-4-card">
                             <a href="sneaker-description.html">
-                            <img src="images/related-product-5.png" alt="img" class="section-4-card-image">
+                                <img src="images/related-product-5.png" alt="img" class="section-4-card-image">
                             </a>
                             <div class="section-card-price-container">
                                 <h1 class="section-card-price">2500&#8377</h1><span>3000&#8377</span>
@@ -228,7 +219,7 @@
                     <div class="swiper-slide">
                         <div class="section-4-card">
                             <a href="sneaker-description.html">
-                            <img src="images/related-product-6.png" alt="img" class="section-4-card-image">
+                                <img src="images/related-product-6.png" alt="img" class="section-4-card-image">
                             </a>
                             <div class="section-card-price-container">
                                 <h1 class="section-card-price">2500&#8377</h1><span>3000&#8377</span>
@@ -236,8 +227,8 @@
                             <a href="#" class="section-card-name-link">Nike Dunk High</a>
                         </div>
                     </div>
-                    
-                </div>  
+
+                </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
@@ -273,46 +264,134 @@
     <!--End of Footer -->
 
     <!-- Swiper Slider JS-->
-    
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-      <script>
-        var swiper = new Swiper(".card_swiper", {
-      spaceBetween: 20,
-      loop : true,
-      speed : 1000,
-      autoplay:{
-        delay:3000
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
-        "@0.00": {
-          slidesPerView: 1,
-        },
-        "@0.75": {
-          slidesPerView: 1,
-        },
-        "@1.00": {
-          slidesPerView: 2,
-        },
-        "@1.50": {
-          slidesPerView: 4,
-        },
-        "@3.00": {
-          slidesPerView: 4, 
-        },
-      },
-    });
-      </script>
-      <!--End of Swiper Slider JS-->
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        let products = [
+            {
+                id: 1,
+                name: "Abibas last",
+                image: "http://127.0.0.1:5502/images/bestseller-img-1.png",
+                price: 20000,
+                wrongprice: 1000,
+            },
+            {
+                id: 2,
+                name: "Nikky Jordar last",
+                image: "http://127.0.0.1:5502/images/bestseller-img-2.png",
+                price: 20000,
+                wrongprice: 2000,
+            },
+            {
+                id: 3,
+                name: "Nikky Jordar last",
+                image: "http://127.0.0.1:5502/images/bestseller-img-3.png",
+                price: 30000,
+                wrongprice: 3000,
+            },
+            {
+                id: 4,
+                name: "Nikky AirMax",
+                image: "http://127.0.0.1:5502/images/bestseller-img-4.png",
+                price: 40000,
+                wrongprice: 4000,
+            },
+            {
+                id: 5,
+                name: "Nikky Jordar last",
+                image: "http://127.0.0.1:5502/images/bestseller-img-5.png",
+                price: 50000,
+                wrongprice: 5000,
+            },
+            {
+                id: 6,
+                name: "Nikky AirMax",
+                image: "http://127.0.0.1:5502/images/bestseller-img-6.png",
+                price: 10000,
+                wrongprice: 1000,
+            },
+        ]
+        let listcards = [];
+
+        var shoeId = localStorage.getItem('keyid');
+        let a = document.querySelector('.product-name')
+        let b = document.querySelector('.product-price')
+        let c = document.querySelector('.product-img')
+        var sneakertitle;
+        var sneakerprice;
+        var sneakerimg;
+        products.forEach((value, key) => {
+            if (value.id == shoeId) {
+                sneakertitle = value.name
+                sneakerprice = value.wrongprice
+                sneakerimg = value.image
+            }
+        })
+        a.innerText = sneakertitle;
+        b.innerHTML = `MRP: &#8377 ${sneakerprice}`;
+        c.setAttribute('src', sneakerimg);
+
+
+        function func() {
+            // Retrieve the array from localStorage or create an empty array if it doesn't exist
+            var keyid2 = JSON.parse(localStorage.getItem('keyid2')) || [];
+
+            // Generate a new item (for demonstration purposes, it's just a timestamp)
+            var newItem = localStorage.getItem('keyid');
+            // Check if the new item already exists in the array
+            var isDuplicate = keyid2.includes(newItem);
+
+            if (isDuplicate) {
+                alert('Item already exists in the cart!');
+            } else {
+                // Add the new item to the array
+                keyid2.push(newItem);
+
+                // Store the updated array back into localStorage
+                localStorage.setItem('keyid2', JSON.stringify(keyid2));
+
+                window.location.href = 'cart.html';
+            }
+
+        }
+
+
+
+        // swiper
+        var swiper = new Swiper(".card_swiper", {
+            spaceBetween: 20,
+            loop: true,
+            speed: 1000,
+            autoplay: {
+                delay: 3000
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                "@0.00": {
+                    slidesPerView: 1,
+                },
+                "@0.75": {
+                    slidesPerView: 1,
+                },
+                "@1.00": {
+                    slidesPerView: 2,
+                },
+                "@1.50": {
+                    slidesPerView: 4,
+                },
+                "@3.00": {
+                    slidesPerView: 4,
+                },
+            },
+        });
+    </script>
 </body>
 
 </html>

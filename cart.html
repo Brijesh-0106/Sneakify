@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <!-- End of Tab logo -->
     <!-- External files links -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart2.css">
     <link rel="stylesheet" href="cart.css">
     <!-- End of External files links -->
     <!-- Fontawasome CDN link -->
@@ -22,8 +24,9 @@
         crossorigin="anonymous"></script>
     <!--End of Bootstrap CSS and JS CDN links -->
 </head>
+
 <body>
-    
+
     <!-- Up icon -->
     <div class="fixed-up-icon">
         <a href="#"><button class="up-icon">
@@ -48,14 +51,15 @@
                     </a>
                 </div>
                 <div class="navbar-list-items">
-                    <a href="#" class="navbar-link">Home</a>
-                    <a href="categories.html" class="navbar-link">Categories</a>
-                    <a href="aboutus.html" class="navbar-link">AboutUs</a>
-                    <a href="contactus.html" class="navbar-link">ContactUs</a>
-                    <a href="login.html" class="navbar-link">Login</a>
+                    <a href="home.html" class="navbar-link">Home</a>
+                    <a href="profile.html" class="navbar-link">MyProfile</a>
+                    <a href="track-order.html" class="navbar-link">TrackOrder</a>
+                    <a href="categories-2.html" class="navbar-link">Categories</a>
+                    <!-- <a href="aboutus.html" class="navbar-link">AboutUs</a> -->
+                    <a href="contactus-2.html" class="navbar-link">ContactUs</a>
                 </div>
-        </div>
-        <div class="search-and-cart-container">
+            </div>
+            <div class="search-and-cart-container">
                 <div class="search-container">
                     <input type="search" class="searchbar" placeholder="Search here...">
                     <button type="submit" class="search-btn">
@@ -65,10 +69,10 @@
                 <div class="cart-icon-container">
                     <a href="cart.html" class="navbar-link cart">
                         <i class="fa-solid fa-bag-shopping cart-icon"></i>
-                        <p id="count" class="cart-count">0</p>
+                        <p id="count" class="cart-count"> 0</p>
                     </a>
                 </div>
-            </div>    
+            </div>
         </div>
     </nav>
 
@@ -76,11 +80,213 @@
 
     <!-- Cart Section -->
 
-    <div class="cart-section-container">
-        <h1 class="cart-section-heading">My Cart</h1>
-        <a href="checkout.html"> Dummy Checkout Link for redirect to checkout page  </a>
-    </div>
-    <!--End of Cart Section -->
-<script src="script.js"></script>
+    <div class="small-container cart-page">
+        <table id="tab">
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+
+
+        </table>
+        <div class="total-price">
+            <table>
+                <tr>
+                    <td>Subtotal</td>
+                    <td id="tp"></td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td>30.00</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td id="tpwt"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button class="contact-btn" onclick="window.location.href='checkout.html'">CheckOut</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!--End of Cart Section -->
+
+
+        <!-- <script src="script.js"></script> -->
+        <script>
+            let products = [
+                {
+                    id: 1,
+                    name: "Abibas last",
+                    image: "http://127.0.0.1:5502/images/bestseller-img-1.png",
+                    price: 20000,
+                    wrongprice: 1000,
+                },
+                {
+                    id: 2,
+                    name: "Nikky Jordar last",
+                    image: "http://127.0.0.1:5502/images/bestseller-img-2.png",
+                    price: 20000,
+                    wrongprice: 2000,
+                },
+                {
+                    id: 3,
+                    name: "Nikky Jordar last",
+                    image: "http://127.0.0.1:5502/images/bestseller-img-3.png",
+                    price: 30000,
+                    wrongprice: 3000,
+                },
+                {
+                    id: 4,
+                    name: "Nikky AirMax",
+                    image: "http://127.0.0.1:5502/images/bestseller-img-4.png",
+                    price: 40000,
+                    wrongprice: 4000,
+                },
+                {
+                    id: 5,
+                    name: "Nikky Jordar last",
+                    image: "http://127.0.0.1:5502/images/bestseller-img-5.png",
+                    price: 50000,
+                    wrongprice: 5000,
+                },
+                {
+                    id: 6,
+                    name: "Nikky AirMax",
+                    image: "http://127.0.0.1:5502/images/bestseller-img-6.png",
+                    price: 10000,
+                    wrongprice: 1000,
+                },
+            ]
+
+
+
+
+            // let a = document.querySelector('#tab');
+            // let shoeno = localStorage.getItem('keyid2')
+            // var storedArray = JSON.parse(shoeno);
+            // let totalprice = 0
+            // products.forEach(function (product) {
+            //     storedArray.forEach(function (val) {
+            //         if (product.id == val) {
+            //             totalprice += product.wrongprice
+            //             let newdiv2 = document.createElement("tr");
+            //             newdiv2.innerHTML = `<td><div class="cart-info"><img src="${product.image}"><div><p>${product.name}</p> <small style="font-size:12px">Price: ${product.wrongprice.toLocaleString()}</small><br><a href="#" class="remove-link">Remove</a><div></div></td><td><input type="number" value="1" class="quantity-input"></td><td>${product.wrongprice.toLocaleString()}</td>`
+            //             a.appendChild(newdiv2);
+
+            //             // Event listener for remove link
+            //             newdiv2.querySelector('.remove-link').addEventListener('click', function () {
+            //                 console.log("one")
+            //                 removeProduct(product.id); // Call removeProduct function with product ID
+            //             });
+            //         }
+            //     });
+            // });
+            // let tp = document.querySelector('#tp');
+            // let tpwt = document.querySelector('#tpwt');
+            // tp.innerText = totalprice
+            // tpwt.innerHTML = parseInt(totalprice) + 30
+            // localStorage.setItem('totalprice', totalprice)
+
+
+
+            // function removeProduct(productId) {
+            //     let index = storedArray.indexOf(productId.toString()); // Convert productId to string
+            //     if (index !== -1) {
+            //         storedArray.splice(index, 1);
+            //         localStorage.setItem('keyid2', JSON.stringify(storedArray));
+            //         window.location.reload(); // Reload the page to reflect changes
+            //     }
+            // }
+
+
+
+
+            let a = document.querySelector('#tab');
+            let shoeno = localStorage.getItem('keyid2');
+            var storedArray = JSON.parse(shoeno);
+            let totalprice = 0;
+
+            products.forEach(function (product) {
+                storedArray.forEach(function (val) {
+                    if (product.id == val) {
+                        totalprice = totalprice + product.wrongprice
+                        console.log(totalprice)
+                        let newdiv2 = document.createElement("tr");
+                        newdiv2.innerHTML = `
+                <td>
+                    <div class="cart-info">
+                        <img src="${product.image}">
+                        <div>
+                            <p>${product.name}</p>
+                            <small style="font-size:12px">Price: <span class="wrongPrice">${product.wrongprice.toLocaleString()}</span></small><br>
+                            <a href="#" class="remove-link">Remove</a>
+                        <div>
+                    </div>
+                </td>
+                <td>
+                    <input type="number" value="1" class="quantity-input">
+                </td>
+                <td class="subtotal">${product.wrongprice.toLocaleString()}</td>
+            `;
+                        a.appendChild(newdiv2);
+
+                        // Event listener for remove link
+                        newdiv2.querySelector('.remove-link').addEventListener('click', function () {
+                            removeProduct(product.id); // Call removeProduct function with product ID
+                        });
+
+                        // Event listener for quantity input change
+                        newdiv2.querySelector('.quantity-input').addEventListener('input', function () {
+                            updateSubtotal(product, newdiv2);
+                        });
+                    }
+                });
+            });
+
+            let tp = document.querySelector('#tp');
+            let tpwt = document.querySelector('#tpwt');
+            tp.innerText = totalprice;
+            tpwt.innerHTML = parseInt(totalprice) + 30;
+            localStorage.setItem('totalprice', totalprice);
+
+            function removeProduct(productId) {
+                let index = storedArray.indexOf(productId.toString());
+                if (index !== -1) {
+                    storedArray.splice(index, 1);
+                    localStorage.setItem('keyid2', JSON.stringify(storedArray));
+                    window.location.reload();
+                }
+            }
+
+            function updateSubtotal(product, parentElement) {
+                let quantity = parseInt(parentElement.querySelector('.quantity-input').value);
+                let subtotal = product.wrongprice * quantity;
+                parentElement.querySelector('.subtotal').textContent = subtotal.toLocaleString();
+
+                // // Recalculate total price
+                // console.log("A");
+                let updatedTotalPrice = 0;
+                let cartItems = a.querySelectorAll('tr');
+                // console.log("",cartItems);
+                for (let i = 1; i < cartItems.length; i++) {
+                    let cartItem = cartItems[i];
+                    let subtotalCell = cartItem.querySelector('.subtotal');
+                    console.log(subtotalCell);
+                    updatedTotalPrice += parseInt(subtotalCell.textContent.replace(/,/g, ''));
+                }
+
+                tp.innerText = updatedTotalPrice.toLocaleString();
+                tpwt.innerHTML = (updatedTotalPrice + 30).toLocaleString();
+                localStorage.setItem('totalprice', updatedTotalPrice);
+            }
+
+
+
+        </script>
 </body>
+
 </html>

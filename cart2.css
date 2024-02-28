@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  font-family: "Montserrat", sans-serif;
+}
+/* cart page desicion */
+.cart-page {
+  margin: 80px auto;
+  width: 100%;
+  padding: 0 25px;
+  max-width: 1080px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+th {
+  text-align: left;
+  padding: 5px;
+  color: white;
+  font-size: 18px;
+  background-color: black;
+  font-weight: normal;
+}
+
+td {
+  padding: 10px 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+td input {
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+}
+
+td a {
+  color: dodgerblue;
+  font-size: 12px;
+}
+
+td img {
+  height: 100px;
+  width: 100px;
+  margin-right: 10px;
+}
+
+.total-price {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.total-price table {
+  border-top: 3px solid #000;
+  width: 100%;
+  max-width: 400px;
+}
+
+td:last-child {
+  text-align: right;
+  font-size: 16px;
+  font-weight: 500;
+  
+}
+th:last-child {
+  text-align: right;
+}
+
+p{
+  font-weight: 500;
+  font-size: 16px;
+}

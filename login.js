@@ -21,14 +21,15 @@ function signIn(event) {
 
 
     let params = {
-        "client_id": "411007623187-ddf19tkeb68ji8fjrqj4ild7hg1iqeao.apps.googleusercontent.com",
-        "redirect_uri": "http://127.0.0.1:5501/home.html",
+        "client_id": "819499027932-7cjrchl64hj4909san3i6p8cn5ofldqh.apps.googleusercontent.com",
+        "redirect_uri": "http://127.0.0.1:5502/home.html",
+        // create your client id and redirect_uri from google ref:https://www.youtube.com/watch?v=XiuA-xO5Pz8
         "response_type": "token",
         "scope": "https://www.googleapis.com/auth/userinfo.profile",
         "include_granted_scopes": 'true',
         'state': 'pass-through-value'
     }
-
+    // http://demo.careerpavers.com
     for (var p in params) {
         let input = document.createElement('input')
         input.setAttribute('type', 'hidden')
@@ -47,8 +48,8 @@ function signIn(event) {
 
 
 
-
-// function to check email format
+// form validation
+// function to to check email format
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -68,71 +69,60 @@ function isPasswordupper(pwd) {
     return pwdRegex.test(pwd);
 }
 
-
-// function to to check phone number should contain only numbers
-function isValidNumber(phone) {
-    const phoneRegex = /^[0-9]+$/;
-    return phoneRegex.test(phone);
-}
-
 // function to add message in alert
 function setalertmsg(id, msg) {
     ele = document.getElementById(id);
-    ele.innerText = msg;
+    ele.getElementsByClassName('formerror')[0].innerText = msg;
 }
 
 function validateform() {
     let returnval = true;
-    // for name should be more not short.
-    var name = document.forms['myform']['fname'].value;
-    if (name.length < 3) {
-        setalertmsg("fnb", "Length of First name is too short!");
-        returnval = false;
-    } else {
-        setalertmsg("fnb", "");
-    }
 
     // for proper format of mail and mail shouldn't be too long.
     var email = document.forms['myform']['email'].value;
     if (email.length > 28) {
+        let a = document.getElementById('forth')
+        a.classList.remove('d-none');
         setalertmsg("eb", "Length of your email is too big!");
         returnval = false;
     } else if (!isValidEmail(email)) {
+        let a = document.getElementById('forth')
+        a.classList.remove('d-none');
         setalertmsg("eb", "Invalid email format!");
         returnval = false;
     } else {
-        setalertmsg("eb", "");
-    }
-
-    // for length of phone number and only digits are allowed
-    var phone = document.forms['myform']['phone'].value;
-    if (phone.length != 10) {
-        setalertmsg("pnb", "Phone number should be of 10 digits only!");
-        returnval = false;
-    } else if (!isValidNumber(phone)) {
-        setalertmsg("pnb", "Phone number should contain numbers only!");
-        returnval = false;
-    } else {
-        setalertmsg("pnb", "");
+        let a = document.getElementById('forth')
+        a.classList.add('d-none');
     }
 
     // for password validation
     var pwd = document.forms['myform']['password'].value;
     if (!isPasswordLong(pwd)) {
-        setalertmsg("pb", "password must contain Minimum six characters!");
+        let a = document.getElementById('fifth')
+        a.classList.remove('d-none');
+        setalertmsg("pb", "Minimum six characters!");
         returnval = false;
     } else if (!isPasswordspecal(pwd)) {
-        setalertmsg("pb", "password must contain a special characters!");
+        let a = document.getElementById('fifth')
+        a.classList.remove('d-none');
+        setalertmsg("pb", "One special characters!");
         returnval = false;
     } else if (!isPasswordupper(pwd)) {
-        setalertmsg("pb", "password must contain a uppercase characters!");
+        let a = document.getElementById('fifth')
+        a.classList.remove('d-none');
+        setalertmsg("pb", "One uppercase characters!");
         returnval = false;
     }
     else {
-        setalertmsg("pb", "");
+        let a = document.getElementById('fifth')
+        a.classList.add('d-none');
     }
 
-
-
+    // final message for form submissiion
+    if (returnval == true) {
+        let a = document.getElementById('first')
+        a.classList.remove('d-none');
+        a.firstElementChild.innerText = "Login successfully!"
+    }
     return false;
 }

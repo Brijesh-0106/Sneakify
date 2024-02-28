@@ -1,62 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Sneakify - Sign Up</title>
-    <!-- Tab logo -->
-    <link rel="icon" href="images/Sneakify-logos_black.png">
-    <!-- End of Tab logo -->
-    <!-- External files links -->
-    <link rel="stylesheet" href="signup.css">
-    <!-- End of External files links -->
-    <!-- Fontawasome CDN link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!--End of Fontawasome CDN link -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Sneakify - Sign Up</title>
+  <!-- Tab logo -->
+  <link rel="icon" href="images/Sneakify-logos_black.png">
+  <!-- End of Tab logo -->
+  <!-- External files links -->
+  <link rel="stylesheet" href="signup.css">
+  <!-- End of External files links -->
+  <!-- Fontawasome CDN link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!--End of Fontawasome CDN link -->
 </head>
+
 <body>
 
-    <!-- Sign up form -->
+  <!-- Sign up form -->
 
-    <div class="login-form-container">
-        <form class="login-form">
-          <h1>Welcome To Sneakify</h1>
-          <p>Please Enter below deatils</p>
-          <div class="input-group">
-            <input type="text" id="fname" name="fname" placeholder="First Name*" required>
-          </div>
-          <div class="input-group">
-            <input type="text" id="lname" name="lname" placeholder="Last Name">
-          </div>
-           <div class="input-group">
-            <input type="tel" id="phone" name="phone" placeholder="Phone Number*" required>
-          </div>
-          <div class="input-group">
-            <input type="email" id="email" name="email" placeholder="Email*" required>
-          </div>
-         
-          <div class="input-group">
-            <input type="password" id="password" name="password" placeholder="Password*" required>
-          </div>
-          <button type="submit">Sign Up</button>
-
-          <div class="text-with-lines">
-            <h2 class="lines-text">OR</h2>
-            </div>
-
-          <div class="login-via-google">
-            <div class="google-icon">
-              <button class="google-icon-btn" onclick="signIn()" id="google-sign-in-btn"><i class="fa-brands fa-google"></i></button>
-            </div>
-
-          </div>
-          <div class="bottom-text">
-            <p>Already have an account? <a href="login.html">Sign In</a></p>
-          </div>
-        </form>
+  <div class="login-form-container">
+    <form class="login-form" name="myform" action="/contactus.html" method="post" onsubmit="return validateform()">
+      <h1>Welcome To Sneakify</h1>
+      <p>Please Enter below deatils</p>
+      <div class="input-group">
+        <input type="text" id="fname" name="fname" placeholder="Name*" required>
+        <div><small style="margin-top:5px;margin-left:3px"><b style="color:red;font-weight: 400;" id="fnb"></b></small></div>
+      </div>
+      <div class="input-group">
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number*" required>
+        <div><small style="margin-top:5px;margin-left:3px"><b style="color:red;font-weight: 400;" id="pnb"></b></small></div>
+      </div>
+      <div class="input-group">
+        <input type="email" id="email" name="email" placeholder="Email*" required>
+        <div><small style="margin-top:5px;margin-left:3px"><b style="color:red;font-weight: 400;" id="eb"></b></small></div>
       </div>
 
-    <!--End of Sign up form -->
-    <script src="home-script.js"></script>
+      <div class="input-group">
+        <input type="password" id="password" name="password" placeholder="Password*" required>
+        <div><small style="margin-top:5px;margin-left:3px"><b style="color:red;font-weight: 400;" id="pb"></b></small></div>
+      </div>
+      <button type="submit">Sign Up</button>
+
+      <div class="text-with-lines">
+        <h2 class="lines-text">OR</h2>
+      </div>
+
+      <div class="login-via-google">
+        <div class="google-icon">
+          <button class="google-icon-btn" onclick="signIn()" id="google-sign-in-btn"><i
+              class="fa-brands fa-google"></i></button>
+        </div>
+
+      </div>
+      <div class="bottom-text">
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </div>
+    </form>
+  </div>
+
+  <!--End of Sign up form -->
+  <script src="home-script.js"></script>
 </body>
+
 </html>
