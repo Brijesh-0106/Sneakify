@@ -27,13 +27,7 @@
 </head>
 
 <body>
-    <!-- Up icon -->
-    <div class="fixed-up-icon">
-        <a href="#"><button class="up-icon">
-                <i class="fa-solid fa-circle-arrow-up" style="color: #000000;"></i>
-            </button></a>
-    </div>
-    <!--End of Up icon -->
+   
 
     <!-- Navbar -->
 
@@ -201,7 +195,7 @@
                 <div class="review-body">
                     <img src="images/reviewer-img-1.png" alt="" class="review-image">
                     <div class="reviewer-name-date">
-                        <p class="reviewer-name">Meet Asodariya 2</p>
+                        <p class="reviewer-name">Brijesh shah</p>
                         <span class="review-date">
                             January 22, 2024
                         </span>
@@ -239,10 +233,11 @@
     <!-- Swiper Slider JS-->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
-        let bagcount=document.querySelector('#count')
+        let bagcount = document.querySelector('#count')
         console.log(bagcount);
-        bagcount.innerHTML= JSON.parse(localStorage.getItem('keyid2')).length;
+        bagcount.innerHTML = JSON.parse(localStorage.getItem('keyid2')).length;
 
 
         var swiper = new Swiper(".card_swiper", {
@@ -281,7 +276,12 @@
     </script>
     <!--End of Swiper Slider JS-->
 
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="script-2.js"></script>
+    <!-- chatbot -->
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/99f4e02f-7de1-4f39-b4f7-7f1ad56a45dc/webchat/config.js"
+        defer></script>
 </body>
 
 </html>

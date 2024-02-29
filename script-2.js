@@ -142,7 +142,7 @@ const initapp = () => {
     products.forEach((value, key) => {
         let newdiv2 = document.createElement("div");
         newdiv2.classList.add('swiper-slide');
-        newdiv2.innerHTML = `<div class="section-4-card"><a href="sneaker-description.html" onclick="localStorage.setItem('keyid', ${value.id})"><img src="${value.image}" class="section-4-card-image"><div class="section-card-price-container"><h1 class="section-card-price">${value.price.toLocaleString()}&#8377</h1><span>${value.wrongprice.toLocaleString()}&#8377</span></div><div href="#" class="section-card-name-link">${value.name}</div></a></div>`
+        newdiv2.innerHTML = `<div class="section-4-card"><a href="sneaker-description-2.html" onclick="localStorage.setItem('keyid', ${value.id})"><img src="${value.image}" class="section-4-card-image"><div class="section-card-price-container"><h1 class="section-card-price">${value.price.toLocaleString()}&#8377</h1><span>${value.wrongprice.toLocaleString()}&#8377</span></div><div href="#" class="section-card-name-link">${value.name}</div></a></div>`
         list.appendChild(newdiv2);
     })
 }

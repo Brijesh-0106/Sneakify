@@ -87,50 +87,50 @@
   </div>
 
   <script>
-    let products = [
-      {
-        id: 1,
-        name: "Abibas last",
-        image: "http://127.0.0.1:5502/images/bestseller-img-1.png",
-        price: 20000,
-        wrongprice: 1000,
-      },
-      {
-        id: 2,
-        name: "Nikky Jordar last",
-        image: "http://127.0.0.1:5502/images/bestseller-img-2.png",
-        price: 20000,
-        wrongprice: 2000,
-      },
-      {
-        id: 3,
-        name: "Nikky Jordar last",
-        image: "http://127.0.0.1:5502/images/bestseller-img-3.png",
-        price: 30000,
-        wrongprice: 3000,
-      },
-      {
-        id: 4,
-        name: "Nikky AirMax",
-        image: "http://127.0.0.1:5502/images/bestseller-img-4.png",
-        price: 40000,
-        wrongprice: 4000,
-      },
-      {
-        id: 5,
-        name: "Nikky Jordar last",
-        image: "http://127.0.0.1:5502/images/bestseller-img-5.png",
-        price: 50000,
-        wrongprice: 5000,
-      },
-      {
-        id: 6,
-        name: "Nikky AirMax",
-        image: "http://127.0.0.1:5502/images/bestseller-img-6.png",
-        price: 10000,
-        wrongprice: 1000,
-      },
-    ]
+     let products = [
+            {
+                id: 1,
+                name: "Adidas Stan Smith",
+                image: "http://127.0.0.1:5502/images/bestseller-img-1.png",
+                price: 20000,
+                wrongprice: 1000,
+            },
+            {
+                id: 2,
+                name: "New Balance 574",
+                image: "http://127.0.0.1:5502/images/bestseller-img-2.png",
+                price: 20000,
+                wrongprice: 2000,
+            },
+            {
+                id: 3,
+                name: "Nike Air Force 1 Low '07 - White",
+                image: "http://127.0.0.1:5502/images/bestseller-img-3.png",
+                price: 30000,
+                wrongprice: 3000,
+            },
+            {
+                id: 4,
+                name: "Converse Chuck Taylor All-Star",
+                image: "http://127.0.0.1:5502/images/bestseller-img-4.png",
+                price: 40000,
+                wrongprice: 4000,
+            },
+            {
+                id: 5,
+                name: "Veja V-10",
+                image: "http://127.0.0.1:5502/images/bestseller-img-5.png",
+                price: 50000,
+                wrongprice: 5000,
+            },
+            {
+                id: 6,
+                name: "Comet X Lows Ash",
+                image: "http://127.0.0.1:5502/images/bestseller-img-6.png",
+                price: 10000,
+                wrongprice: 1000,
+            },
+        ]
 
 
 
@@ -156,7 +156,7 @@
 
           let newdiv2 = document.createElement("ul");
           newdiv2.classList.add('cart__list');
-          let temp=product.wrongprice*quantity
+          let temp = product.wrongprice * quantity
           newdiv2.innerHTML = `
                 <li class="cart__item">
                     <a class="cart__link" href="#">${product.name}</a>
@@ -192,7 +192,7 @@
       currency: 'INR',
       name: 'Snekify',
       handler: function (response) {
-        alert('Thank you for your Donation! Payment successful ID: ' + response.razorpay_payment_id);
+        alert('Thank you for your Purchase! Payment successful ID: ' + response.razorpay_payment_id);
         sessionStorage.setItem('paymentId', response.razorpay_payment_id);
       },
       prefill: {

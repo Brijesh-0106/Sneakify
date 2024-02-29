@@ -94,7 +94,7 @@
 
     <div class="product-container">
         <div class="product-img-container">
-            <div class="product-img-div"><img src="Images/product-img-1.jfif" alt="img" class="product-img"></div>
+            <div class="product-img-div"><img src="" alt="img" class="product-img"></div>
             <div class="product-img-div"><img src="Images/product-img-2.jfif" alt="img" class="product-img"></div>
         </div>
         <div class="product-description-container">
@@ -123,6 +123,7 @@
                         <option value="UK 5.5">UK 5.5</option>
                         <option value="UK 6">UK 6</option>
                         <option value="UK 6.5">UK 6.5</option>
+                        <option value="UK 7">UK 7</option>
                     </select>
                 </label>
             </div>
@@ -131,8 +132,9 @@
                             class="fa-regular fa-pen-to-square"></i></button></a>
             </div>
             <div class="signin-to-buy-btn-container">
-                <a href="cart-2.html"><button class="signin-to-buy-btn" onclick="func()">Add to
-                        Cart</button></a>
+                <button class="signin-to-buy-btn" onclick="func()">Add
+                    toCart</button>
+                <!-- <a href="cart-2.html"><button class="signin-to-buy-btn" onclick="addToCart()">Add toCart</button></a> -->
             </div>
         </div>
     </div>
@@ -149,9 +151,11 @@
 
     <!-- Related Products section -->
 
+    <!-- Section 4 -->
+
     <div class="section-4-label">
         <h1 class="section-4-label-heading">Related Products</h1>
-        <a href="categories-2.html" class="section-4-label-link">Show All Products<i
+        <a href="categories.html" class="section-4-label-link">Show All Products<i
                 class="fa-solid fa-arrow-right"></i></a>
     </div>
     <section class="slider_container">
@@ -160,7 +164,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="section-4-card">
-                            <a href="sneaker-description-2.html">
+                            <a href="sneaker-description.html">
                                 <img src="images/related-product-1.png" alt="img" class="section-4-card-image">
                             </a>
                             <div class="section-card-price-container">
@@ -171,7 +175,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="section-4-card">
-                            <a href="sneaker-description-2.html">
+                            <a href="sneaker-description.html">
                                 <img src="images/related-product-2.png" alt="img" class="section-4-card-image">
                             </a>
                             <div class="section-card-price-container">
@@ -182,7 +186,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="section-4-card">
-                            <a href="sneaker-description-2.html">
+                            <a href="sneaker-description.html">
                                 <img src="images/related-product-3.png" alt="img" class="section-4-card-image">
                             </a>
                             <div class="section-card-price-container">
@@ -193,7 +197,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="section-4-card">
-                            <a href="sneaker-description-2.html">
+                            <a href="sneaker-description.html">
                                 <img src="images/related-product-7.png" alt="img" class="section-4-card-image">
                             </a>
                             <div class="section-card-price-container">
@@ -204,7 +208,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="section-4-card">
-                            <a href="sneaker-description-2.html">
+                            <a href="sneaker-description.html">
                                 <img src="images/related-product-5.png" alt="img" class="section-4-card-image">
                             </a>
                             <div class="section-card-price-container">
@@ -215,7 +219,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="section-4-card">
-                            <a href="sneaker-description-2.html">
+                            <a href="sneaker-description.html">
                                 <img src="images/related-product-6.png" alt="img" class="section-4-card-image">
                             </a>
                             <div class="section-card-price-container">
@@ -233,6 +237,8 @@
         </div>
     </section>
 
+    <!--End of Section 4 -->
+
     <!--End of Related Products section -->
 
 
@@ -240,11 +246,11 @@
 
     <section class="section-5-footer-container">
         <div class="footer-links-list">
-            <a href="home.html" class="footer-link">Home</a>
-            <a href="profile.html" class="footer-link">MyProfile</a>
-            <a href="track-order.html" class="footer-link">TrackOrder</a>
-            <a href="categories-2.html" class="footer-link">Categories</a>
-            <a href="contactus-2.html" class="footer-link">ContatUs</a>
+            <a href="#" class="footer-link">Home</a>
+            <a href="categories.html" class="footer-link">Categories</a>
+            <a href="aboutus.html" class="footer-link">AboutUs</a>
+            <a href="contactus.html" class="footer-link">ContatUs</a>
+            <a href="login.html" class="footer-link">Login</a>
         </div>
         <div class="footer-social-list-1">
             <a href="#" class="footer-social"><i class="fa-brands fa-square-instagram" style="color: #ea00fa;"></i></a>
@@ -261,45 +267,52 @@
     <!-- Swiper Slider JS-->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>let products = [
+    <script>
+        let bagcount = document.querySelector('#count')
+        console.log(bagcount);
+        bagcount.innerHTML = JSON.parse(localStorage.getItem('keyid2')).length;
+
+
+
+        let products = [
             {
                 id: 1,
-                name: "Abibas last",
+                name: "Adidas Stan Smith",
                 image: "http://127.0.0.1:5502/images/bestseller-img-1.png",
                 price: 20000,
                 wrongprice: 1000,
             },
             {
                 id: 2,
-                name: "Nikky Jordar last",
+                name: "New Balance 574",
                 image: "http://127.0.0.1:5502/images/bestseller-img-2.png",
                 price: 20000,
                 wrongprice: 2000,
             },
             {
                 id: 3,
-                name: "Nikky Jordar last",
+                name: "Nike Air Force 1 Low '07 - White",
                 image: "http://127.0.0.1:5502/images/bestseller-img-3.png",
                 price: 30000,
                 wrongprice: 3000,
             },
             {
                 id: 4,
-                name: "Nikky AirMax",
+                name: "Converse Chuck Taylor All-Star",
                 image: "http://127.0.0.1:5502/images/bestseller-img-4.png",
                 price: 40000,
                 wrongprice: 4000,
             },
             {
                 id: 5,
-                name: "Nikky Jordar last",
+                name: "Veja V-10",
                 image: "http://127.0.0.1:5502/images/bestseller-img-5.png",
                 price: 50000,
                 wrongprice: 5000,
             },
             {
                 id: 6,
-                name: "Nikky AirMax",
+                name: "Comet X Lows Ash",
                 image: "http://127.0.0.1:5502/images/bestseller-img-6.png",
                 price: 10000,
                 wrongprice: 1000,
@@ -344,7 +357,7 @@
                 // Store the updated array back into localStorage
                 localStorage.setItem('keyid2', JSON.stringify(keyid2));
 
-                window.location.href = 'cart.html';
+                window.location.href = 'cart-2.html';
             }
 
         }

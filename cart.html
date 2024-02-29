@@ -46,17 +46,16 @@
         <div class="navbar-container">
             <div class="navbar-logo-list-container">
                 <div class="logo-container">
-                    <a href="index.html">
+                    <a href="#">
                         <img src="Images/Sneakify-logos_white.png" alt="logo" class="logo-img zoom">
                     </a>
                 </div>
                 <div class="navbar-list-items">
-                    <a href="home.html" class="navbar-link">Home</a>
-                    <a href="profile.html" class="navbar-link">MyProfile</a>
-                    <a href="track-order.html" class="navbar-link">TrackOrder</a>
-                    <a href="categories-2.html" class="navbar-link">Categories</a>
-                    <!-- <a href="aboutus.html" class="navbar-link">AboutUs</a> -->
-                    <a href="contactus-2.html" class="navbar-link">ContactUs</a>
+                    <a href="index.html" class="navbar-link">Home</a>
+                    <a href="categories.html" class="navbar-link">Categories</a>
+                    <a href="aboutus.html" class="navbar-link">AboutUs</a>
+                    <a href="contactus.html" class="navbar-link">ContactUs</a>
+                    <a href="login.html" class="navbar-link">Login</a>
                 </div>
             </div>
             <div class="search-and-cart-container">
@@ -106,7 +105,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><button class="contact-btn" onclick="window.location.href='checkout.html'">CheckOut</button>
+                    <td><button class="contact-btn" onclick="window.location.href='login.html'">CheckOut</button>
                     </td>
                 </tr>
             </table>
@@ -125,59 +124,60 @@
 
 
             let products = [
-                {
-                    id: 1,
-                    name: "Abibas last",
-                    image: "http://127.0.0.1:5502/images/bestseller-img-1.png",
-                    price: 20000,
-                    wrongprice: 1000,
-                },
-                {
-                    id: 2,
-                    name: "Nikky Jordar last",
-                    image: "http://127.0.0.1:5502/images/bestseller-img-2.png",
-                    price: 20000,
-                    wrongprice: 2000,
-                },
-                {
-                    id: 3,
-                    name: "Nikky Jordar last",
-                    image: "http://127.0.0.1:5502/images/bestseller-img-3.png",
-                    price: 30000,
-                    wrongprice: 3000,
-                },
-                {
-                    id: 4,
-                    name: "Nikky AirMax",
-                    image: "http://127.0.0.1:5502/images/bestseller-img-4.png",
-                    price: 40000,
-                    wrongprice: 4000,
-                },
-                {
-                    id: 5,
-                    name: "Nikky Jordar last",
-                    image: "http://127.0.0.1:5502/images/bestseller-img-5.png",
-                    price: 50000,
-                    wrongprice: 5000,
-                },
-                {
-                    id: 6,
-                    name: "Nikky AirMax",
-                    image: "http://127.0.0.1:5502/images/bestseller-img-6.png",
-                    price: 10000,
-                    wrongprice: 1000,
-                },
-            ]
+            {
+                id: 1,
+                name: "Adidas Stan Smith",
+                image: "http://127.0.0.1:5502/images/bestseller-img-1.png",
+                price: 20000,
+                wrongprice: 1000,
+            },
+            {
+                id: 2,
+                name: "New Balance 574",
+                image: "http://127.0.0.1:5502/images/bestseller-img-2.png",
+                price: 20000,
+                wrongprice: 2000,
+            },
+            {
+                id: 3,
+                name: "Nike Air Force 1 Low '07 - White",
+                image: "http://127.0.0.1:5502/images/bestseller-img-3.png",
+                price: 30000,
+                wrongprice: 3000,
+            },
+            {
+                id: 4,
+                name: "Converse Chuck Taylor All-Star",
+                image: "http://127.0.0.1:5502/images/bestseller-img-4.png",
+                price: 40000,
+                wrongprice: 4000,
+            },
+            {
+                id: 5,
+                name: "Veja V-10",
+                image: "http://127.0.0.1:5502/images/bestseller-img-5.png",
+                price: 50000,
+                wrongprice: 5000,
+            },
+            {
+                id: 6,
+                name: "Comet X Lows Ash",
+                image: "http://127.0.0.1:5502/images/bestseller-img-6.png",
+                price: 10000,
+                wrongprice: 1000,
+            },
+        ]
 
 
 
 
 
 
-            // ---------------------------------------------third-------------------------------------
-            let a = document.querySelector('#tab');
-            let shoeno = localStorage.getItem('keyid2');
-            var storedArray = JSON.parse(shoeno);
+            // ---------------------------------------------Main work of cart-------------------------------------
+
+            let a = document.querySelector('#tab');         //element where items are added
+            let shoeno = localStorage.getItem('keyid2');    //items to show in cart  --> <string form> 
+            var storedArray = JSON.parse(shoeno);           //items to show in cart  --> <array form>
             let totalprice = 0;
 
             // Create a map to store quantity values for each product ID
@@ -198,26 +198,29 @@
             products.forEach(function (product) {
                 storedArray.forEach(function (val) {
                     if (product.id == val) {
+                        // 
                         let quantity = quantityMap.get(product.id) || 1;
                         totalprice += product.wrongprice * quantity;
+                        // 
 
                         let newdiv2 = document.createElement("tr");
-                        newdiv2.innerHTML = `
-                <td>
-                    <div class="cart-info">
-                        <img src="${product.image}">
-                        <div>
-                            <p>${product.name}</p>
-                            <small style="font-size:12px">Price: <span class="wrongPrice">${product.wrongprice.toLocaleString()}</span></small><br>
-                            <a href="#" class="remove-link">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <input type="number" value="${quantity}" class="quantity-input">
-                </td>
-                <td class="subtotal">${(product.wrongprice * quantity).toLocaleString()}</td>
-            `;
+                        newdiv2.innerHTML =
+                            `
+                            <td>
+                                <div class="cart-info">
+                                    <img src="${product.image}">
+                                    <div>
+                                        <p>${product.name}</p>
+                                        <small style="font-size:12px">Price: <span class="wrongPrice">${product.wrongprice.toLocaleString()}</span></small><br>
+                                        <a href="#" class="remove-link">Remove</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="number" value="${quantity}" min=1 class="quantity-input">
+                            </td>
+                            <td class="subtotal">${(product.wrongprice * quantity).toLocaleString()}</td>
+                        `;
                         a.appendChild(newdiv2);
 
                         // Event listener for remove link
@@ -256,7 +259,7 @@
 
                 let updatedTotalPrice = 0;
                 let cartItems = a.querySelectorAll('tr');
-                for (let i = 1; i < cartItems.length; i++) {
+                for (let i = 1; i < cartItems.length; i++) {            //loop is started from firts index cause 0th index is table header
                     let cartItem = cartItems[i];
                     let subtotalCell = cartItem.querySelector('.subtotal');
                     updatedTotalPrice += parseInt(subtotalCell.textContent.replace(/,/g, ''));
